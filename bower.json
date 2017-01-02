@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Check if key exists on the object.",
   "main": "kein.js",
   "support": "kein.support.js",

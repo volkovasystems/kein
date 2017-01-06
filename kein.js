@@ -42,7 +42,7 @@
 	@end-module-configuration
 
 	@module-documentation:
-		Check if key exists on the object.
+		Check if key exists on the entity.
 	@end-module-documentation
 
 	@include:
@@ -56,25 +56,32 @@
 const falzy = require( "falzy" );
 const protype = require( "protype" );
 
-const kein = function kein( object, key ){
+const kein = function kein( entity, key ){
 	/*;
 		@meta-configuration:
 			{
-				"object:required": "object",
-				"key:required": [ "string", "number", "symbol" ]
+				"entity:required": [
+					"object",
+					"function"
+				],
+				"key:required": [
+					"string",
+					"number",
+					"symbol"
+				]
 			}
 		@end-meta-configuration
 	*/
 
-	if( !protype( object, OBJECT ) || falzy( object ) ){
-		throw new Error( "invalid object" );
+	if( !protype( entity, OBJECT, FUNCTION ) || falzy( entity ) ){
+		throw new Error( "invalid entity" );
 	}
 
 	if( falzy( key ) ){
 		throw new Error( "invalid key" );
 	}
 
-	return object[ key ] !== undefined;
+	return entity[ key ] !== undefined;
 };
 
 module.exports = kein;

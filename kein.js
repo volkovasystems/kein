@@ -82,7 +82,18 @@ const kein = function kein( entity, key ){
 	}
 
 	try{
-		return ( key in entity ) && entity[ key ] !== undefined;
+		return ( ( key in entity ) ||
+			entity[ key ] !== undefined ||
+			entity.hasOwnProperty( key ) ||
+			( ( ) => {
+				for( property in entity ){
+					if( property === key ){
+						return true;
+					}
+				}
+
+				return false;
+			} )( ) );
 
 	}catch( error ){
 		throw new Error( `error checking key, ${ error }` );

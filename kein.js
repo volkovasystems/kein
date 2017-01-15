@@ -86,7 +86,7 @@ const kein = function kein( entity, key ){
 			entity[ key ] !== undefined ||
 			entity.hasOwnProperty( key ) ||
 			( ( ) => {
-				for( property in entity ){
+				for( let property in entity ){
 					if( property === key ){
 						return true;
 					}

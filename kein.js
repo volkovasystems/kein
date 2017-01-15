@@ -81,7 +81,12 @@ const kein = function kein( entity, key ){
 		throw new Error( "invalid key" );
 	}
 
-	return entity[ key ] !== undefined;
+	try{
+		return ( key in entity ) && entity[ key ] !== undefined;
+
+	}catch( error ){
+		throw new Error( `error checking key, ${ error }` );
+	}
 };
 
 module.exports = kein;

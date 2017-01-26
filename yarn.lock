@@ -926,12 +926,12 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
-falzy@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.8.0.tgz#3a7884fb916be17e9f376447b80782492c4527e5"
+falzy@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.9.0.tgz#fe455d55472a30ffe2deeb37ee197924ad7a7edc"
   dependencies:
     babel-runtime "^6.22.0"
-    protype "^0.9.0"
+    protype "^0.10.0"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -1576,9 +1576,9 @@ process@^0.11.0:
   version "0.11.9"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.9.tgz#7bd5ad21aa6253e7da8682264f1e11d11c0318c1"
 
-protype@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/protype/-/protype-0.9.0.tgz#349f84d64955c199f4f1a62164f2a50aa04089f3"
+protype@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/protype/-/protype-0.10.0.tgz#3284e3476dc9b82cf26c7c27e480e11e66722016"
   dependencies:
     babel-runtime "^6.22.0"
     cemento "^0.6.0"

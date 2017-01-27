@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Check if key exists on the object.",
   "main": "kein.js",
   "support": "kein.support.js",
@@ -27,7 +27,7 @@
     "tests"
   ],
   "dependencies": {
-    "falzy": "^0.9.0",
-    "protype": "^0.10.0"
+    "falzy": "^0.10.0",
+    "protype": "^0.11.0"
   }
 }

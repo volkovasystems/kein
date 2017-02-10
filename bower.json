@@ -1,10 +1,8 @@
 {
   "name": "kein",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Check if key exists on the object.",
-  "main": "kein.js",
-  "support": "kein.support.js",
-  "deploy": "kein.deploy.js",
+  "main": "kein.deploy.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -27,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "falzy": "^0.10.0",
-    "protype": "^0.11.0"
+    "falzy": "^0.11.0",
+    "protype": "^0.15.0"
   }
 }

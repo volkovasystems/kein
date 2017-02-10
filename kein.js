@@ -34,6 +34,9 @@
 			"file": "kein.js",
 			"module": "kein",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/kein.git",
 			"test": "kein-test.js",
@@ -96,7 +99,7 @@ const kein = function kein( entity, key ){
 			} )( ) );
 
 	}catch( error ){
-		throw new Error( `error checking key, ${ error }` );
+		throw new Error( `error checking key, ${ error.stack }` );
 	}
 };
 

@@ -7,7 +7,7 @@
   "deploy": "kein.deploy.js",
   "browser": "kein.deploy.js",
   "scripts": {
-    "build": "babel kein.js -o kein.support.js && webpack",
+    "build": "babel kein.js --out-file kein.support.js --source-maps && webpack --progress",
     "test": "mocha kein-test.js"
   },
   "repository": {
@@ -32,14 +32,14 @@
   },
   "homepage": "https://github.com/volkovasystems/kein#readme",
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "falzy": "^0.11.0",
-    "protype": "^0.15.0"
+    "babel-runtime": "^6.23.0",
+    "falzy": "^0.13.0",
+    "protype": "^0.17.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "source-map-loader": "^0.1.6",
     "webpack": "^2.2.1"

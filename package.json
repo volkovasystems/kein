@@ -1,13 +1,13 @@
 {
   "name": "kein",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Check if key exists on the object.",
   "main": "kein.js",
   "support": "kein.support.js",
   "deploy": "kein.deploy.js",
   "browser": "kein.deploy.js",
   "scripts": {
-    "build": "babel kein.js --out-file kein.support.js --source-maps && webpack --progress",
+    "build": "babel kein.js --out-file kein.support.js --source-maps && webpack --progress --display-modules",
     "test": "mocha kein-test.js"
   },
   "repository": {

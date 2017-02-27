@@ -46,6 +46,8 @@
 
 	@module-documentation:
 		Check if key exists on the entity.
+
+		This is a deep checking, meaning, it will also check if the key exists by being inherited.
 	@end-module-documentation
 
 	@include:
@@ -76,18 +78,20 @@ const kein = function kein( entity, key ){
 		@end-meta-configuration
 	*/
 
-	if( !protype( entity, OBJECT, FUNCTION ) || falzy( entity ) ){
+	if( falzy( entity ) || !protype( entity, OBJECT + FUNCTION ) ){
 		throw new Error( "invalid entity" );
 	}
 
-	if( falzy( key ) ){
+	if( falzy( key ) || !protype( key, NUMBER + STRING + SYMBOL ) ){
 		throw new Error( "invalid key" );
 	}
 
 	try{
 		return ( ( key in entity ) ||
 			entity[ key ] !== undefined ||
-			entity.hasOwnProperty( key ) ||
+			( protype( entity.hasOwnProperty, FUNCTION ) && entity.hasOwnProperty( key ) ) ||
+			Object.getOwnPropertyNames( entity ).some( ( property ) => { return property === key; } ) ||
+			Object.getOwnPropertySymbols( entity ).some( ( property ) => { return property === key; } ) ||
 			( ( ) => {
 				for( let property in entity ){
 					if( property === key ){

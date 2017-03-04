@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Check if key exists on the object.",
   "main": "kein.js",
   "support": "kein.support.js",
@@ -33,8 +33,8 @@
   "homepage": "https://github.com/volkovasystems/kein#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "falzy": "^0.13.0",
-    "protype": "^0.17.0"
+    "falzy": "^0.14.0",
+    "protype": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",

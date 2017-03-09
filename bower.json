@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Check if key exists on the object.",
   "main": "kein.deploy.js",
   "support": "kein.support.js",
@@ -25,8 +25,14 @@
     "test",
     "tests"
   ],
+  "resolutions": {
+    "protype": "^0.19.0",
+    "cemento": "^0.13.0"
+  },
   "dependencies": {
-    "falzy": "^0.14.0",
-    "protype": "^0.18.0"
+    "falzy": "^0.15.0",
+    "portel": "^0.0.0",
+    "protype": "^0.19.0",
+    "zelf": "^0.9.0"
   }
 }

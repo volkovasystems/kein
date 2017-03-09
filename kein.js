@@ -1,5 +1,3 @@
-"use strict";
-
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -59,39 +57,43 @@
 */
 
 const falzy = require( "falzy" );
+const portel = require( "portel" );
 const protype = require( "protype" );
+const zelf = require( "zelf" );
 
-const kein = function kein( entity, key ){
+const kein = function kein( key, entity ){
 	/*;
 		@meta-configuration:
 			{
-				"entity:required": [
-					"object",
-					"function"
-				],
 				"key:required": [
 					"string",
 					"number",
 					"symbol"
-				]
+				],
+				"entity:required": "*"
 			}
 		@end-meta-configuration
 	*/
-
-	if( falzy( entity ) || !protype( entity, OBJECT + FUNCTION ) ){
-		throw new Error( "invalid entity" );
-	}
 
 	if( falzy( key ) || !protype( key, NUMBER + STRING + SYMBOL ) ){
 		throw new Error( "invalid key" );
 	}
 
+	entity = portel( entity || zelf( this ) );
+
 	try{
 		return ( ( key in entity ) ||
+
 			entity[ key ] !== undefined ||
+
 			( protype( entity.hasOwnProperty, FUNCTION ) && entity.hasOwnProperty( key ) ) ||
-			Object.getOwnPropertyNames( entity ).some( ( property ) => { return property === key; } ) ||
-			Object.getOwnPropertySymbols( entity ).some( ( property ) => { return property === key; } ) ||
+
+			Object.getOwnPropertyNames( entity )
+				.some( ( property ) => { return property === key; } ) ||
+
+			( protype( key, SYMBOL ) && Object.getOwnPropertySymbols( entity )
+				.some( ( property ) => { return property === key; } ) ) ||
+
 			( ( ) => {
 				for( let property in entity ){
 					if( property === key ){

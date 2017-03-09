@@ -2,6 +2,8 @@
 
 const kein = require( "./kein.js" );
 
-console.log( kein( { "name": "simple" }, "name" ) );
+console.log( kein( "name", { "name": "simple" } ) );
 
-console.log( kein( { [ Symbol.for( "hello" ) ]: "simple" }, Symbol.for( "hello" ) ) );
+console.log( kein( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "simple" } ) );
+
+console.log( kein( "toString", 123 ) );

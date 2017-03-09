@@ -1,7 +1,9 @@
 yarn add \
 babel-runtime \
 falzy \
+portel \
 protype \
+zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -13,5 +15,8 @@ webpack \
 --dev && \
 bower install \
 falzy \
+portel \
 protype \
---save
+zelf \
+--save \
+--force-latest

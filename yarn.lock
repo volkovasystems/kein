@@ -794,13 +794,6 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
-cemento@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.12.0.tgz#4d32a7470b25bf4fc803c501da1deca6ed16f418"
-  dependencies:
-    babel-runtime "^6.23.0"
-    harden "^0.17.0"
-
 cemento@^0.13.0:
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.13.0.tgz#552ea265920db2c9bf38095da74841bf2fe6c646"
@@ -1861,12 +1854,12 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-portel@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/portel/-/portel-0.0.0.tgz#da51ce6fdba6ed1b569d0bedc5f75b246698e90d"
+portel@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/portel/-/portel-0.1.0.tgz#8e9cac34c84588821666b619af470c18022667ab"
   dependencies:
     babel-runtime "^6.23.0"
-    protype "^0.18.0"
+    protype "^0.19.0"
 
 preserve@^0.2.0:
   version "0.2.0"
@@ -1883,14 +1876,6 @@ process-nextick-args@~1.0.6:
 process@^0.11.0:
   version "0.11.9"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.9.tgz#7bd5ad21aa6253e7da8682264f1e11d11c0318c1"
-
-protype@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/protype/-/protype-0.18.0.tgz#1c0861d71e58a146e8824382ad3aaeead69e14c3"
-  dependencies:
-    babel-runtime "^6.23.0"
-    cemento "^0.12.0"
-    harden "^0.17.0"
 
 protype@^0.19.0:
   version "0.19.0"
@@ -2152,9 +2137,9 @@ source-list-map@~0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
-source-map-loader@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.1.6.tgz#c09903da6d73b9e53b7ed8ee5245597051e98e91"
+source-map-loader@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/source-map-loader/-/source-map-loader-0.2.0.tgz#aba0cf717a1d7ee29fc30f31cc0c441d78ea42ba"
   dependencies:
     async "^0.9.0"
     loader-utils "~0.2.2"
@@ -2328,8 +2313,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 uglify-js@^2.7.5:
-  version "2.8.10"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.10.tgz#bd0be568369f7be8cad2a4161fa90ada118ef73a"
+  version "2.8.11"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.11.tgz#11a51c43d810b47bc00aee4d512cb3947ddd1ac4"
   dependencies:
     source-map "~0.5.1"
     uglify-to-browserify "~1.0.0"

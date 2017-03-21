@@ -51,7 +51,9 @@
 	@include:
 		{
 			"falzy": "falzy",
-			"protype": "protype"
+			"portel": "portel",
+			"protype": "protype",
+			"zelf": "zelf"
 		}
 	@end-include
 */

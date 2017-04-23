@@ -7,3 +7,5 @@ console.log( kein( "name", { "name": "simple" } ) );
 console.log( kein( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "simple" } ) );
 
 console.log( kein( "toString", 123 ) );
+
+console.log( kein( "test", 123 ) );

@@ -51,6 +51,7 @@
 	@include:
 		{
 			"falzy": "falzy",
+			"fnamed": "fnamed",
 			"portel": "portel",
 			"protype": "protype",
 			"zelf": "zelf"
@@ -59,6 +60,7 @@
 */
 
 const falzy = require( "falzy" );
+const fnamed = require( "fnamed" );
 const portel = require( "portel" );
 const protype = require( "protype" );
 const zelf = require( "zelf" );
@@ -90,17 +92,14 @@ const kein = function kein( key, entity ){
 
 			( protype( entity.hasOwnProperty, FUNCTION ) && entity.hasOwnProperty( key ) ) ||
 
-			Object.getOwnPropertyNames( entity )
-				.some( ( property ) => { return property === key; } ) ||
+			Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) ) ||
 
 			( protype( key, SYMBOL ) && Object.getOwnPropertySymbols( entity )
-				.some( ( property ) => { return property === key; } ) ) ||
+				.some( ( property ) => ( property === key ) ) ) ||
 
 			( ( ) => {
 				for( let property in entity ){
-					if( property === key ){
-						return true;
-					}
+					return ( property === key ) || ( fnamed( entity[ property ], key ) );
 				}
 
 				return false;

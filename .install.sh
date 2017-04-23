@@ -1,6 +1,7 @@
 yarn add \
 babel-runtime \
 falzy \
+fnamed \
 portel \
 protype \
 zelf \
@@ -15,6 +16,7 @@ webpack \
 --dev && \
 bower install \
 falzy \
+fnamed \
 portel \
 protype \
 zelf \

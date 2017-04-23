@@ -51,6 +51,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                          	@include:
                                                                                                                                                                                                                                                                                                                                                                                                                                                          		{
                                                                                                                                                                                                                                                                                                                                                                                                                                                          			"falzy": "falzy",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                         			"fnamed": "fnamed",
                                                                                                                                                                                                                                                                                                                                                                                                                                                          			"portel": "portel",
                                                                                                                                                                                                                                                                                                                                                                                                                                                          			"protype": "protype",
                                                                                                                                                                                                                                                                                                                                                                                                                                                          			"zelf": "zelf"
@@ -59,6 +60,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                          */
 
 var falzy = require("falzy");
+var fnamed = require("fnamed");
 var portel = require("portel");
 var protype = require("protype");
 var zelf = require("zelf");
@@ -90,17 +92,14 @@ var kein = function kein(key, entity) {
 
 		protype(entity.hasOwnProperty, FUNCTION) && entity.hasOwnProperty(key) ||
 
-		(0, _getOwnPropertyNames2.default)(entity).
-		some(function (property) {return property === key;}) ||
+		(0, _getOwnPropertyNames2.default)(entity).some(function (property) {return property === key;}) ||
 
 		protype(key, SYMBOL) && (0, _getOwnPropertySymbols2.default)(entity).
 		some(function (property) {return property === key;}) ||
 
 		function () {
 			for (var property in entity) {
-				if (property === key) {
-					return true;
-				}
+				return property === key || fnamed(entity[property], key);
 			}
 
 			return false;

@@ -43,7 +43,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                          	@end-module-configuration
                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                                                                                                                                                                                                                                                                                                                                                                                                                                                          	@module-documentation:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                         		Check if key exists on the entity.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                         		Checks if key exists on the entity.
                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                                                                                                                                                                                                                                                                                                                                                                                                                                                          		This is a deep checking, meaning, it will also check if the key exists by being inherited.
                                                                                                                                                                                                                                                                                                                                                                                                                                                          	@end-module-documentation
@@ -70,8 +70,8 @@ var kein = function kein(key, entity) {
                                        	@meta-configuration:
                                        		{
                                        			"key:required": [
-                                       				"string",
                                        				"number",
+                                       				"string",
                                        				"symbol"
                                        			],
                                        			"entity:required": "*"
@@ -83,7 +83,12 @@ var kein = function kein(key, entity) {
 		throw new Error("invalid key");
 	}
 
-	entity = portel(entity || zelf(this));
+	if (arguments.length == 2) {
+		entity = portel(entity);
+
+	} else {
+		entity = zelf(this);
+	}
 
 	try {
 		return key in entity ||
@@ -99,14 +104,16 @@ var kein = function kein(key, entity) {
 
 		function () {
 			for (var property in entity) {
-				return property === key || fnamed(entity[property], key);
+				if (property === key || fnamed(entity[property], key)) {
+					return true;
+				}
 			}
 
 			return false;
 		}();
 
 	} catch (error) {
-		throw new Error("error checking key, " + error.stack);
+		throw new Error("cannot check key, " + error.stack);
 	}
 };
 

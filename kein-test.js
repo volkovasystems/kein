@@ -1,11 +1,17 @@
-"use strict";
 
+const assert = require( "assert" );
 const kein = require( "./kein.js" );
 
-console.log( kein( "name", { "name": "simple" } ) );
+//assert.equal( kein( "toString", null ), true, "should be true" );
 
-console.log( kein( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "simple" } ) );
+assert.equal( kein( "toString", NaN ), true, "should be true" );
 
-console.log( kein( "toString", 123 ) );
+assert.equal( kein( "toString", undefined ), true, "should be true" );
 
-console.log( kein( "test", 123 ) );
+assert.equal( kein( "toString", 123 ), true, "should be true" );
+
+assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
+
+assert.equal( kein( "property", { "property": "value" } ), true, "should be true" );
+
+console.log( "ok" );

@@ -1,2 +1,2 @@
 # kein
-Check if key exists on the object.
+Checks if key exists on the entity.

@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "Checks if key exists on the entity.",
   "main": "kein.deploy.js",
   "support": "kein.support.js",
@@ -25,13 +25,9 @@
     "test",
     "tests"
   ],
-  "resolutions": {
-    "stringe": "^0.3.0",
-    "raze": "^0.28.0"
-  },
   "dependencies": {
     "falzy": "^0.19.0",
-    "fnamed": "^0.4.0",
+    "fnamed": "^0.6.0",
     "portel": "^0.3.0",
     "protype": "^0.21.0",
     "zelf": "^0.11.0"

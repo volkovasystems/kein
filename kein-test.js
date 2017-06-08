@@ -10,6 +10,8 @@ assert.equal( kein( "toString", undefined ), true, "should be true" );
 
 assert.equal( kein( "toString", 123 ), true, "should be true" );
 
+assert.equal( kein( 123, { 123: "hello" } ), true, "should return true" );
+
 assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
 
 assert.equal( kein( "property", { "property": "value" } ), true, "should be true" );

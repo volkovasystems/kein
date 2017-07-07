@@ -32,10 +32,11 @@
 			"file": "kein.js",
 			"module": "kein",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/kein.git",
 			"test": "kein-test.js",
 			"global": true
@@ -95,7 +96,7 @@ const kein = function kein( key, entity ){
 	try{
 		return ( ( key in entity ) ||
 
-			( protype( entity.hasOwnProperty, FUNCTION ) && entity.hasOwnProperty( key ) ) ||
+			( typeof entity.hasOwnProperty == FUNCTION && entity.hasOwnProperty( key ) ) ||
 
 			Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) ) ||
 

@@ -1,8 +1,36 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./kein.deploy.js">
-		</script>
+		<title>kein unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./kein.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "kein unit test", function( assert ) {
+
+				assert.equal( kein( "toString", NaN ), true, "should be true" );
+
+				assert.equal( kein( "toString", undefined ), true, "should be true" );
+
+				assert.equal( kein( "toString", 123 ), true, "should be true" );
+
+				assert.equal( kein( "toString", ( ) => { } ), true, "should be true" );
+
+				assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
+
+				assert.equal( kein( "property", { "property": "value" } ), true, "should be true" );
+				
+			} );
+		</script>
+	</body>
 </html>

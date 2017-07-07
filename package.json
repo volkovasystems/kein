@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "description": "Checks if key exists on the entity.",
   "main": "kein.js",
   "support": "kein.support.js",
@@ -24,7 +24,8 @@
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
   "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
@@ -34,17 +35,17 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "falzy": "^0.20.0",
-    "fnamed": "^0.9.0",
+    "fnamed": "^0.10.0",
     "portel": "^0.4.0",
     "protype": "^0.22.0",
     "zelf": "^0.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
+    "babel-core": "^6.25.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.6.1"
+    "webpack": "^3.1.0"
   }
 }

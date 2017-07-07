@@ -1,12 +1,13 @@
 {
   "name": "kein",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "description": "Checks if key exists on the entity.",
   "main": "kein.deploy.js",
   "support": "kein.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -27,7 +28,7 @@
   ],
   "dependencies": {
     "falzy": "^0.20.0",
-    "fnamed": "^0.9.0",
+    "fnamed": "^0.10.0",
     "portel": "^0.4.0",
     "protype": "^0.22.0",
     "zelf": "^0.12.0"

@@ -100,7 +100,7 @@ var kein = function kein(key, entity) {
 
 		(0, _getOwnPropertyNames2.default)(entity).some(function (property) {return property === key;}) ||
 
-		protype(key, SYMBOL) && (0, _getOwnPropertySymbols2.default)(entity).
+		(typeof key === "undefined" ? "undefined" : (0, _typeof3.default)(key)) == SYMBOL && (0, _getOwnPropertySymbols2.default)(entity).
 		some(function (property) {return property === key;}) ||
 
 		function () {

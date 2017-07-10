@@ -100,7 +100,7 @@ const kein = function kein( key, entity ){
 
 			Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) ) ||
 
-			( protype( key, SYMBOL ) && Object.getOwnPropertySymbols( entity )
+			( typeof key == SYMBOL && Object.getOwnPropertySymbols( entity )
 				.some( ( property ) => ( property === key ) ) ) ||
 
 			( ( ) => {

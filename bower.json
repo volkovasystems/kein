@@ -1,6 +1,6 @@
 {
   "name": "kein",
-  "version": "0.28.0",
+  "version": "0.29.0",
   "description": "Checks if key exists on the entity.",
   "main": "kein.deploy.js",
   "support": "kein.support.js",

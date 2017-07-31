@@ -1,14 +1,29 @@
 {
   "name": "kein",
-  "version": "0.28.0",
+  "version": "0.29.0",
   "description": "Checks if key exists on the entity.",
   "main": "kein.js",
   "support": "kein.support.js",
   "deploy": "kein.deploy.js",
   "browser": "kein.deploy.js",
   "scripts": {
-    "build": "babel kein.js --out-file kein.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha kein-test.js"
+	"pristine": "rsetmod clean && flxc execute ./.install.sh",
+	"clear": "rsetmod clean --clear",
+	"formal": "jesy apply '*.json'",
+	"build:support": "gulp --module kein --all",
+	"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+	"rebuild": "npm run build:support && npm run build:deploy",
+	"build": "npm run pristine && npm run rebuild",
+	"build:test:support": "gulp --module test --all",
+	"build:test:deploy": "webpack --config webpack.test.js --progress --display-modules",
+	"build:test:bridge": "gulp --module test --bridge",
+	"build:test": "npm run build:test:support && npm run build:test:deploy && npm run build:test:bridge",
+	"test:server": "mocha test.js && mocha test.js --reporter=json > test.server.json",
+	"test:client": "./node_modules/.bin/wdio wdio.client.js",
+	"pretest": "npm run clear && npm run rebuild && npm run build:test",
+	"test": "npm run test:server && npm run test:client",
+	"posttest": "npm run formal",
+	"deploy": "npm run build && npm run build:test && npm run test:server && npm run test:client && npm run formal"
   },
   "repository": {
     "type": "git",

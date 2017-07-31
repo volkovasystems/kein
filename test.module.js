@@ -73,8 +73,6 @@ const path = require( "path" );
 
 describe( "kein", ( ) => {
 
-	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
-
 	describe( "`kein( 'toString', NaN )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( "toString", NaN ), true );

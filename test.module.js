@@ -118,6 +118,55 @@ describe( "kein", ( ) => {
 
 //: @end-server
 
+//: @client:
+
+describe( "kein", ( ) => {
+
+	describe( "`kein( 'toString', NaN )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", NaN ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', undefined )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", undefined ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", 123 ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			assert.equal( kein( "toString", ( ) => { } ), true );
+			//: @end-ignore
+
+		} );
+	} );
+
+	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
+			//: @end-ignore
+		} );
+	} );
+
+	describe( "`kein( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "property", { "property": "value" } ), true );
+		} );
+	} );
+
+} );
+
+//: @end-client
+
 //: @bridge:
 
 describe( "kein", ( ) => {

@@ -68,3 +68,111 @@ const kein = require( "./kein.support.js" );
 //: @bridge:
 const path = require( "path" );
 //: @end-bridge
+
+
+//: @bridge:
+
+describe( "kein", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`kein( 'toString', NaN )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( "toString", NaN );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`kein( 'toString', undefined )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( "toString", undefined );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`kein( 'toString', 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( "toString", 123 );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`kein( 'toString', ( ) => { } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( "toString", ( ) => { } );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+			//: @end-ignore
+
+		} );
+	} );
+
+	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`kein( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( "property", { "property": "value" } );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+} );
+
+//: @end-bridge

@@ -1,39 +1,39 @@
 {
-	"name": "kein",
-	"version": "0.29.0",
-	"description": "Checks if key exists on the entity.",
-	"main": "kein.deploy.js",
-	"support": "kein.support.js",
-	"authors": [
-		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-		"Vinse Vinalon <vinsevinalon@gmail.com>"
-	],
-	"license": "MIT",
-	"keywords": [
-		"check",
-		"key",
-		"exist",
-		"in",
-		"object",
-		"kein"
-	],
-	"homepage": "https://github.com/volkovasystems/kein",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"resolutions": {
-		"protype": "^0.24.0"
-	},
-	"dependencies": {
-		"falzy": "^0.23.0",
-		"fnamed": "^0.14.0",
-		"portel": "^0.5.0",
-		"protype": "^0.24.0",
-		"zelf": "^0.14.0"
-	}
+  "name": "kein",
+  "version": "0.29.0",
+  "description": "Checks if key exists on the entity.",
+  "main": "kein.deploy.js",
+  "support": "kein.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "check",
+    "key",
+    "exist",
+    "in",
+    "object",
+    "kein"
+  ],
+  "homepage": "https://github.com/volkovasystems/kein",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "protype": "^0.24.0"
+  },
+  "dependencies": {
+    "falzy": "^0.23.0",
+    "fnamed": "^0.14.0",
+    "portel": "^0.5.0",
+    "protype": "^0.24.0",
+    "zelf": "^0.14.0"
+  }
 }

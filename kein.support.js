@@ -86,32 +86,55 @@ var kein = function kein(key, entity) {
 		throw new Error("invalid key");
 	}
 
-	if (arguments.length == 2) {
+	/*;
+   	@note:
+   		If the entity is falsy or non-object then we should wrap it with
+   			portel. Now for cases of null and undefined this is ok
+   			because the purpose is to check if the specific key
+   			exists for a particular dynamic object, chances of this
+   			being used to check for meta-methods and its intended usage
+   			is rare or may not have adverse effect on the entire logic
+   			of any systems.
+   	@end-note
+   */
+	if (
+	arguments.length == 2 && (
+	falzy(entity) || (typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) != "object"))
+	{
 		entity = portel(entity);
+	}
 
-	} else {
+	/*;
+   	@note:
+   		If key is only given then it will check in the global.
+   	@end-note
+   */
+	if (arguments.length == 1) {
 		entity = zelf(this);
 	}
 
 	try {
-		return key in entity ||
+		return (
+			key in entity ||
 
-		(0, _typeof3.default)(entity.hasOwnProperty) == FUNCTION && entity.hasOwnProperty(key) ||
+			typeof entity.hasOwnProperty == "function" &&
+			entity.hasOwnProperty(key) ||
 
-		(0, _getOwnPropertyNames2.default)(entity).some(function (property) {return property === key;}) ||
+			(0, _getOwnPropertyNames2.default)(entity).some(function (property) {return property === key;}) ||
 
-		(typeof key === "undefined" ? "undefined" : (0, _typeof3.default)(key)) == SYMBOL && (0, _getOwnPropertySymbols2.default)(entity).
-		some(function (property) {return property === key;}) ||
+			(typeof key === "undefined" ? "undefined" : (0, _typeof3.default)(key)) == "symbol" &&
+			(0, _getOwnPropertySymbols2.default)(entity).some(function (property) {return property === key;}) ||
 
-		function () {
-			for (var property in entity) {
-				if (property === key || fnamed(entity[property], key)) {
-					return true;
+			function () {
+				for (var property in entity) {
+					if (property === key || fnamed(entity[property], key)) {
+						return true;
+					}
 				}
-			}
 
-			return false;
-		}();
+				return false;
+			}());
+
 
 	} catch (error) {
 		throw new Error("cannot check key, " + error.stack);

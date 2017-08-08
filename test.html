@@ -18,18 +18,18 @@
 		<script type="application/javascript">
 			QUnit.test( "kein unit test", function( assert ) {
 
-				assert.equal( kein( "toString", NaN ), true, "should be true" );
+				assert.equal( kein( "toString", NaN ), true, "should be equal to true" );
 
-				assert.equal( kein( "toString", undefined ), true, "should be true" );
+				assert.equal( kein( "toString", undefined ), true, "should be equal to true" );
 
-				assert.equal( kein( "toString", 123 ), true, "should be true" );
+				assert.equal( kein( "toString", 123 ), true, "should be equal to true" );
 
-				assert.equal( kein( "toString", ( ) => { } ), true, "should be true" );
+				assert.equal( kein( "toString", ( ) => { } ), true, "should be equal to true" );
 
-				assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
+				assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be equal to true" );
 
-				assert.equal( kein( "property", { "property": "value" } ), true, "should be true" );
-				
+				assert.equal( kein( "property", { "property": "value" } ), true, "should be equal to true" );
+
 			} );
 		</script>
 	</body>

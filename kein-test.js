@@ -14,4 +14,10 @@ assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "v
 
 assert.equal( kein( "property", { "property": "value" } ), true, "should be equal to true" );
 
+let Hello = function Hello( ){ };
+
+Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+assert.equal( kein( Symbol.for( "extensive" ), Hello ), true, "should be equal to true" );
+
 console.log( "ok" );

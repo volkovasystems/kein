@@ -99,7 +99,7 @@ const kein = function kein( key, entity ){
 	*/
 	if(
 		arguments.length == 2
-		&& ( falzy( entity ) || typeof entity != "object" )
+		&& ( falzy( entity ) ||  !protype( entity, OBJECT + FUNCTION ) )
 	){
 		entity = portel( entity );
 	}

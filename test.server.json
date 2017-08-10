@@ -1,0 +1,102 @@
+{
+	"stats": {
+		"suites": 7,
+		"tests": 6,
+		"passes": 6,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-10T08:54:03.646Z",
+		"end": "2017-08-10T08:54:03.652Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', NaN )` should be equal to true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', NaN )` should be equal to true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}

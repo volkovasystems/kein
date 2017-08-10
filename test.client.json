@@ -1,0 +1,245 @@
+{
+	"state": {
+		"passed": 6,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-10T08:54:04.887Z",
+	"end": "2017-08-10T08:54:58.505Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd",
+		"slow": 0
+	},
+	"suites": [
+		{
+			"name": "kein",
+			"duration": 0,
+			"start": "2017-08-10T08:54:57.992Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "kein",
+			"duration": 329,
+			"start": "2017-08-10T08:54:57.993Z",
+			"end": "2017-08-10T08:54:58.322Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-10T08:54:57.994Z",
+					"end": "2017-08-10T08:54:57.994Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.098Z",
+					"end": "2017-08-10T08:54:58.099Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.099Z",
+					"end": "2017-08-10T08:54:58.100Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.146Z",
+					"end": "2017-08-10T08:54:58.147Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.147Z",
+					"end": "2017-08-10T08:54:58.147Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.195Z",
+					"end": "2017-08-10T08:54:58.195Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.196Z",
+					"end": "2017-08-10T08:54:58.196Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.237Z",
+					"end": "2017-08-10T08:54:58.237Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.238Z",
+					"end": "2017-08-10T08:54:58.238Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.278Z",
+					"end": "2017-08-10T08:54:58.278Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.278Z",
+					"end": "2017-08-10T08:54:58.278Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.321Z",
+					"end": "2017-08-10T08:54:58.322Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kein",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-08-10T08:54:58.322Z",
+					"end": "2017-08-10T08:54:58.322Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "kein"
+				}
+			]
+		},
+		{
+			"name": "`kein( 'toString', NaN )`",
+			"duration": 106,
+			"start": "2017-08-10T08:54:57.993Z",
+			"end": "2017-08-10T08:54:58.099Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:57.994Z",
+					"end": "2017-08-10T08:54:58.098Z",
+					"duration": 104,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`kein( 'toString', undefined )`",
+			"duration": 48,
+			"start": "2017-08-10T08:54:58.099Z",
+			"end": "2017-08-10T08:54:58.147Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:58.099Z",
+					"end": "2017-08-10T08:54:58.146Z",
+					"duration": 47,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`kein( 'toString', 123 )`",
+			"duration": 48,
+			"start": "2017-08-10T08:54:58.147Z",
+			"end": "2017-08-10T08:54:58.195Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:58.147Z",
+					"end": "2017-08-10T08:54:58.195Z",
+					"duration": 48,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`kein( 'toString', ( ) => { } )`",
+			"duration": 42,
+			"start": "2017-08-10T08:54:58.196Z",
+			"end": "2017-08-10T08:54:58.238Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:58.196Z",
+					"end": "2017-08-10T08:54:58.237Z",
+					"duration": 41,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`",
+			"duration": 40,
+			"start": "2017-08-10T08:54:58.238Z",
+			"end": "2017-08-10T08:54:58.278Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:58.238Z",
+					"end": "2017-08-10T08:54:58.278Z",
+					"duration": 40,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`kein( 'property', { 'property': 'value' } )`",
+			"duration": 44,
+			"start": "2017-08-10T08:54:58.278Z",
+			"end": "2017-08-10T08:54:58.322Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-08-10T08:54:58.278Z",
+					"end": "2017-08-10T08:54:58.321Z",
+					"duration": 43,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}

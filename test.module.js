@@ -50,7 +50,8 @@
 	@include:
 		{
 			"assert": "should",
-			"kein": "kein"
+			"kein": "kein",
+			"path": "path"
 		}
 	@end-include
 */
@@ -70,7 +71,6 @@ const path = require( "path" );
 //: @end-bridge
 
 //: @server:
-
 describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', NaN )`", ( ) => {
@@ -93,18 +93,13 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', ( ) => { } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			//: @ignore:
 			assert.equal( kein( "toString", ( ) => { } ), true );
-			//: @end-ignore
-
 		} );
 	} );
 
 	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			//: @ignore:
 			assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
-			//: @end-ignore
 		} );
 	} );
 
@@ -115,11 +110,9 @@ describe( "kein", ( ) => {
 	} );
 
 } );
-
 //: @end-server
 
 //: @client:
-
 describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', NaN )`", ( ) => {
@@ -145,7 +138,6 @@ describe( "kein", ( ) => {
 			//: @ignore:
 			assert.equal( kein( "toString", ( ) => { } ), true );
 			//: @end-ignore
-
 		} );
 	} );
 
@@ -164,11 +156,9 @@ describe( "kein", ( ) => {
 	} );
 
 } );
-
 //: @end-client
 
 //: @bridge:
-
 describe( "kein", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
@@ -185,7 +175,6 @@ describe( "kein", ( ) => {
 			).value;
 
 			assert.equal( result, true );
-
 		} );
 	} );
 
@@ -201,7 +190,6 @@ describe( "kein", ( ) => {
 			).value;
 
 			assert.equal( result, true );
-
 		} );
 	} );
 
@@ -217,7 +205,6 @@ describe( "kein", ( ) => {
 			).value;
 
 			assert.equal( result, true );
-
 		} );
 	} );
 
@@ -231,10 +218,9 @@ describe( "kein", ( ) => {
 				}
 
 			).value;
-
-			assert.equal( result, true );
 			//: @end-ignore
 
+			assert.equal( result, true );
 		} );
 	} );
 
@@ -249,8 +235,8 @@ describe( "kein", ( ) => {
 
 			).value;
 			//: @end-ignore
-			assert.equal( result, true );
 
+			assert.equal( result, true );
 		} );
 	} );
 
@@ -266,10 +252,8 @@ describe( "kein", ( ) => {
 			).value;
 
 			assert.equal( result, true );
-
 		} );
 	} );
 
 } );
-
 //: @end-bridge

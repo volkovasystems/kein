@@ -56,6 +56,7 @@
 			"falzy": "falzy",
 			"fnamed": "fnamed",
 			"portel": "portel",
+			"protype": "protype",
 			"zelf": "zelf"
 		}
 	@end-include
@@ -64,6 +65,7 @@
 const falzy = require( "falzy" );
 const fnamed = require( "fnamed" );
 const portel = require( "portel" );
+const protype = require( "protype" );
 const zelf = require( "zelf" );
 
 const kein = function kein( key, entity ){
@@ -80,10 +82,7 @@ const kein = function kein( key, entity ){
 		@end-meta-configuration
 	*/
 
-	if(
-		falzy( key )
-		|| ( typeof key != "number" && typeof key != "string" && typeof key != "symbol" )
-	){
+	if( falzy( key ) || !protype( key, NUMBER + STRING + SYMBOL ) ){
 		throw new Error( "invalid key" );
 	}
 
@@ -100,7 +99,7 @@ const kein = function kein( key, entity ){
 	*/
 	if(
 		arguments.length == 2
-		&& ( falzy( entity ) || ( typeof key != "object" && typeof key != "function" ) )
+		&& ( falzy( entity ) ||  !protype( entity, OBJECT + FUNCTION ) )
 	){
 		entity = portel( entity );
 	}
@@ -114,22 +113,32 @@ const kein = function kein( key, entity ){
 		entity = zelf( this );
 	}
 
-	return (
-		key in entity
-		|| ( typeof entity.hasOwnProperty == "function" && entity.hasOwnProperty( key ) )
-		|| Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) )
-		|| ( typeof key == "symbol"
-			&& Object.getOwnPropertySymbols( entity ).some( ( property ) => ( property === key ) ) )
-		|| ( ( ) => {
-			for( let property in entity ){
-				if( property === key || fnamed( entity[ property ], key ) ){
-					return true;
+	try{
+		return (
+			key in entity
+			|| (
+				typeof entity.hasOwnProperty == "function"
+				&& entity.hasOwnProperty( key )
+			)
+			|| Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) )
+			|| (
+				typeof key == "symbol"
+				&& Object.getOwnPropertySymbols( entity ).some( ( property ) => ( property === key ) )
+			)
+			|| ( ( ) => {
+				for( let property in entity ){
+					if( property === key || fnamed( entity[ property ], key ) ){
+						return true;
+					}
 				}
-			}
 
-			return false;
-		} )( )
-	);
+				return false;
+			} )( )
+		);
+
+	}catch( error ){
+		throw new Error( `cannot check key, ${ error.stack }` );
+	}
 };
 
 module.exports = kein;

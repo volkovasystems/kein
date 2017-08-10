@@ -86,24 +86,46 @@ const kein = function kein( key, entity ){
 		throw new Error( "invalid key" );
 	}
 
-	if( arguments.length == 2 ){
+	/*;
+		@note:
+			If the entity is falsy or non-object then we should wrap it with
+				portel. Now for cases of null and undefined this is ok
+				because the purpose is to check if the specific key
+				exists for a particular dynamic object, chances of this
+				being used to check for meta-methods and its intended usage
+				is rare or may not have adverse effect on the entire logic
+				of any systems.
+		@end-note
+	*/
+	if(
+		arguments.length == 2
+		&& ( falzy( entity ) ||  !protype( entity, OBJECT + FUNCTION ) )
+	){
 		entity = portel( entity );
+	}
 
-	}else{
+	/*;
+		@note:
+			If key is only given then it will check in the global.
+		@end-note
+	*/
+	if( arguments.length == 1 ){
 		entity = zelf( this );
 	}
 
 	try{
-		return ( ( key in entity ) ||
-
-			( typeof entity.hasOwnProperty == FUNCTION && entity.hasOwnProperty( key ) ) ||
-
-			Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) ) ||
-
-			( typeof key == SYMBOL && Object.getOwnPropertySymbols( entity )
-				.some( ( property ) => ( property === key ) ) ) ||
-
-			( ( ) => {
+		return (
+			key in entity
+			|| (
+				typeof entity.hasOwnProperty == "function"
+				&& entity.hasOwnProperty( key )
+			)
+			|| Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) )
+			|| (
+				typeof key == "symbol"
+				&& Object.getOwnPropertySymbols( entity ).some( ( property ) => ( property === key ) )
+			)
+			|| ( ( ) => {
 				for( let property in entity ){
 					if( property === key || fnamed( entity[ property ], key ) ){
 						return true;
@@ -111,7 +133,8 @@ const kein = function kein( key, entity ){
 				}
 
 				return false;
-			} )( ) );
+			} )( )
+		);
 
 	}catch( error ){
 		throw new Error( `cannot check key, ${ error.stack }` );

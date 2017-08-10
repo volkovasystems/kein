@@ -3,7 +3,6 @@ babel-runtime \
 falzy \
 fnamed \
 portel \
-protype \
 zelf \
 --save && \
 yarn add \
@@ -34,7 +33,6 @@ bower install \
 falzy \
 fnamed \
 portel \
-protype \
 zelf \
 --save \
 --force-latest

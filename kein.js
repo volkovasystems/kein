@@ -56,7 +56,6 @@
 			"falzy": "falzy",
 			"fnamed": "fnamed",
 			"portel": "portel",
-			"protype": "protype",
 			"zelf": "zelf"
 		}
 	@end-include
@@ -65,7 +64,6 @@
 const falzy = require( "falzy" );
 const fnamed = require( "fnamed" );
 const portel = require( "portel" );
-const protype = require( "protype" );
 const zelf = require( "zelf" );
 
 const kein = function kein( key, entity ){
@@ -82,7 +80,10 @@ const kein = function kein( key, entity ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( key ) || !protype( key, NUMBER + STRING + SYMBOL ) ){
+	if(
+		falzy( key )
+		|| ( typeof key != "number" && typeof key != "string" && typeof key != "symbol" )
+	){
 		throw new Error( "invalid key" );
 	}
 
@@ -99,7 +100,7 @@ const kein = function kein( key, entity ){
 	*/
 	if(
 		arguments.length == 2
-		&& ( falzy( entity ) ||  !protype( entity, OBJECT + FUNCTION ) )
+		&& ( falzy( entity ) || ( typeof entity != "object" && typeof entity != "function" ) )
 	){
 		entity = portel( entity );
 	}
@@ -113,32 +114,27 @@ const kein = function kein( key, entity ){
 		entity = zelf( this );
 	}
 
-	try{
-		return (
-			key in entity
-			|| (
-				typeof entity.hasOwnProperty == "function"
-				&& entity.hasOwnProperty( key )
-			)
-			|| Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) )
-			|| (
-				typeof key == "symbol"
-				&& Object.getOwnPropertySymbols( entity ).some( ( property ) => ( property === key ) )
-			)
-			|| ( ( ) => {
-				for( let property in entity ){
-					if( property === key || fnamed( entity[ property ], key ) ){
-						return true;
-					}
+	/*;
+		@note:
+			Beyond this, the entity must be non-falsy.
+		@end-note
+	*/
+	return (
+		key in entity
+		|| ( typeof entity.hasOwnProperty == "function" && entity.hasOwnProperty( key ) )
+		|| Object.getOwnPropertyNames( entity ).some( ( property ) => ( property === key ) )
+		|| ( typeof key == "symbol"
+			&& Object.getOwnPropertySymbols( entity ).some( ( property ) => ( property === key ) ) )
+		|| ( ( ) => {
+			for( let property in entity ){
+				if( property === key || fnamed( entity[ property ], key ) ){
+					return true;
 				}
+			}
 
-				return false;
-			} )( )
-		);
-
-	}catch( error ){
-		throw new Error( `cannot check key, ${ error.stack }` );
-	}
+			return false;
+		} )( )
+	);
 };
 
 module.exports = kein;

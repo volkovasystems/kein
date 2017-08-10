@@ -100,7 +100,7 @@ const kein = function kein( key, entity ){
 	*/
 	if(
 		arguments.length == 2
-		&& ( falzy( entity ) || ( typeof key != "object" && typeof key != "function" ) )
+		&& ( falzy( entity ) || ( typeof entity != "object" && typeof entity != "function" ) )
 	){
 		entity = portel( entity );
 	}
@@ -114,6 +114,11 @@ const kein = function kein( key, entity ){
 		entity = zelf( this );
 	}
 
+	/*;
+		@note:
+			Beyond this, the entity must be non-falsy.
+		@end-note
+	*/
 	return (
 		key in entity
 		|| ( typeof entity.hasOwnProperty == "function" && entity.hasOwnProperty( key ) )

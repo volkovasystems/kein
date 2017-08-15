@@ -75,7 +75,7 @@
 		"wdio-mocha-framework": "^0.5.10",
 		"wdio-selenium-standalone-service": "^0.0.9",
 		"webdriverio": "^4.8.0",
-		"webpack": "^3.5.2",
+		"webpack": "^3.5.4",
 		"yargs": "^8.0.2"
 	}
 }

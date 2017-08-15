@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 7,
-		"tests": 6,
-		"passes": 6,
+		"suites": 16,
+		"tests": 15,
+		"passes": 15,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-10T11:27:48.542Z",
-		"end": "2017-08-10T11:27:48.550Z",
-		"duration": 8
+		"start": "2017-08-15T04:58:30.383Z",
+		"end": "2017-08-15T04:58:30.397Z",
+		"duration": 14
 	},
 	"tests": [
 		{
@@ -20,7 +20,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -34,7 +34,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -48,6 +48,69 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Infinity )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', true )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Array )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', 'helloworld' )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Symbol.for( 'hi' ) )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'length', [ 1, 2, 3 ] )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'name', function yeah( ){ } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein with class instance` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "kein `kein( 'property', { } )` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -66,7 +129,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -80,7 +143,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -94,6 +157,69 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Infinity )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', true )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Array )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', 'helloworld' )` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'toString', Symbol.for( 'hi' ) )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'length', [ 1, 2, 3 ] )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 'name', function yeah( ){ } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein with class instance` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "kein `kein( 'property', { } )` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}

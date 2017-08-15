@@ -108,6 +108,73 @@ describe( "kein", ( ) => {
 		} );
 	} );
 
+	describe( "`kein( 'toString', Infinity )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Infinity ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", true ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', Array )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Array ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', 'helloworld' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", "helloworld" ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', Symbol.for( 'hi' ) )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Symbol.for( "hi" ) ), true );
+		} );
+	} );
+
+	describe( "`kein( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "length", [ 1, 2, 3 ] ), true );
+		} );
+	} );
+
+	describe( "`kein( 'name', function yeah( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "name", function yeah( ){ } ), true );
+		} );
+	} );
+
+	describe( "`kein with class instance`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			class Orange {
+				constructor( ){
+					this.color = "orange";
+				}
+				getColor( ){
+					return "orange";
+				}
+			}
+
+			let orange = new Orange( );
+
+			assert.equal( kein( "constructor", orange ), true );
+
+		} );
+	} );
+
+	describe( "`kein( 'property', { } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( kein( "property", { } ), false );
+		} );
+	} );
+
 } );
 //: @end-server
 
@@ -151,6 +218,73 @@ describe( "kein", ( ) => {
 	describe( "`kein( 'property', { 'property': 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( "property", { "property": "value" } ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', Infinity )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Infinity ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", true ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', Array )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Array ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', 'helloworld' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", "helloworld" ), true );
+		} );
+	} );
+
+	describe( "`kein( 'toString', Symbol.for( 'hi' ) )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "toString", Symbol.for( "hi" ) ), true );
+		} );
+	} );
+
+	describe( "`kein( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "length", [ 1, 2, 3 ] ), true );
+		} );
+	} );
+
+	describe( "`kein( 'name', function yeah( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( "name", function yeah( ){ } ), true );
+		} );
+	} );
+
+	describe( "`kein with class instance`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			class Orange {
+				constructor( ){
+					this.color = "orange";
+				}
+				getColor( ){
+					return "orange";
+				}
+			}
+
+			let orange = new Orange( );
+
+			assert.equal( kein( "constructor", orange ), true );
+
+		} );
+	} );
+
+	describe( "`kein( 'property', { } )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( kein( "property", { } ), false );
 		} );
 	} );
 

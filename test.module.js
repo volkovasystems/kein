@@ -143,7 +143,7 @@ describe( "kein", ( ) => {
 			let Hello = function Hello( ){ };
 			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
 
-			return kein( Symbol.for( "extensive" ), Hello );
+			assert.equal( kein( Symbol.for( "extensive" ), Hello ), true );
 		} );
 	} );
 
@@ -265,7 +265,7 @@ describe( "kein", ( ) => {
 			let Hello = function Hello( ){ };
 			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
 
-			return kein( Symbol.for( "extensive" ), Hello );
+			assert.equal( kein( Symbol.for( "extensive" ), Hello ), true );
 		} );
 	} );
 
@@ -387,6 +387,25 @@ describe( "kein", ( ) => {
 			).value;
 			//: @end-ignore
 
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`kein with symbol type as key and function as entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+					return kein( Symbol.for( "extensive" ), Hello );
+				}
+
+			).value;
+			//: @end-ignore
+			
 			assert.equal( result, true );
 		} );
 	} );

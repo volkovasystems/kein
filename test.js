@@ -48,14 +48,14 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"kein": "kein",
 			"path": "path"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const kein = require( "./kein.js" );
@@ -131,6 +131,15 @@ describe( "kein", ( ) => {
 	describe( "`kein( 'toString', Symbol.for( 'hi' ) )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( "toString", Symbol.for( "hi" ) ), true );
+		} );
+	} );
+
+	describe( "`kein with symbol type as key and function as entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+
+			assert.equal( kein( Symbol.for( "extensive" ), Hello ), true );
 		} );
 	} );
 

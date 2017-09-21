@@ -96,6 +96,12 @@ describe( "kein", ( ) => {
 		} );
 	} );
 
+	describe( "`kein( 1, [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( 1, [ 1, 2, 3 ] ), true );
+		} );
+	} );
+
 	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
@@ -210,17 +216,19 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', ( ) => { } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			//: @ignore:
 			assert.equal( kein( "toString", ( ) => { } ), true );
-			//: @end-ignore
+		} );
+	} );
+
+	describe( "`kein( 1, [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( 1, [ 1, 2, 3 ] ), true );
 		} );
 	} );
 
 	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			//: @ignore:
 			assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
-			//: @end-ignore
 		} );
 	} );
 
@@ -375,6 +383,21 @@ describe( "kein", ( ) => {
 		} );
 	} );
 
+	describe( "`kein( 1, [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( 1, [ 1, 2, 3 ] );
+				}
+
+			).value;
+	
+			assert.equal( result, true );
+
+		} );
+	} );
+
 	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			//: @ignore:
@@ -405,14 +428,13 @@ describe( "kein", ( ) => {
 
 			).value;
 			//: @end-ignore
-			
+
 			assert.equal( result, true );
 		} );
 	} );
 
 	describe( "`kein( 'property', { 'property': 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -428,7 +450,6 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', Infinity )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -445,7 +466,6 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', true )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -461,7 +481,6 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', Array )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -477,13 +496,10 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'toString', 'helloworld' )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-
 					return kein( "toString", "helloworld" );
-
 				}
 
 			).value;
@@ -511,7 +527,6 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'length', [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -526,8 +541,7 @@ describe( "kein", ( ) => {
 	} );
 
 	describe( "`kein( 'name', function yeah( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) => {
-
+		it( "should be equal to true", ( ) =>
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -572,7 +586,6 @@ describe( "kein", ( ) => {
 
 	describe( "`kein( 'property', { } )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){

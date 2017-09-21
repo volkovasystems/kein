@@ -92,6 +92,12 @@ describe( "kein", ( ) => {
 		} );
 	} );
 
+	describe( "`kein( 1, [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( 1, [ 1, 2, 3 ] ), true );
+		} );
+	} );
+
 	describe( "`kein( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );

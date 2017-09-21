@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 17,
-		"tests": 16,
-		"passes": 16,
+		"suites": 18,
+		"tests": 17,
+		"passes": 17,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-15T08:07:47.215Z",
-		"end": "2017-09-15T08:07:47.224Z",
-		"duration": 9
+		"start": "2017-09-21T09:37:58.753Z",
+		"end": "2017-09-21T09:37:58.765Z",
+		"duration": 12
 	},
 	"tests": [
 		{
@@ -20,7 +20,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -34,6 +34,13 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 1, [ 1, 2, 3 ] )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -83,7 +90,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', Symbol.for( 'hi' ) )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -136,7 +143,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', undefined )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -150,6 +157,13 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 1, [ 1, 2, 3 ] )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -199,7 +213,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', Symbol.for( 'hi' ) )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},

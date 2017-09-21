@@ -392,7 +392,7 @@ describe( "kein", ( ) => {
 				}
 
 			).value;
-	
+
 			assert.equal( result, true );
 
 		} );
@@ -541,7 +541,7 @@ describe( "kein", ( ) => {
 	} );
 
 	describe( "`kein( 'name', function yeah( ){ } )`", ( ) => {
-		it( "should be equal to true", ( ) =>
+		it( "should be equal to true", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){

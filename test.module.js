@@ -96,6 +96,12 @@ describe( "kein", ( ) => {
 		} );
 	} );
 
+	describe( "`kein( 1, { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( 1, { 0: "hello", 1: "world" } ), true );
+		} );
+	} );
+
 	describe( "`kein( 1, [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( 1, [ 1, 2, 3 ] ), true );
@@ -217,6 +223,12 @@ describe( "kein", ( ) => {
 	describe( "`kein( 'toString', ( ) => { } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( kein( "toString", ( ) => { } ), true );
+		} );
+	} );
+
+	describe( "`kein( 1, { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( kein( 1, { 0: "hello", 1: "world" } ), true );
 		} );
 	} );
 
@@ -380,6 +392,21 @@ describe( "kein", ( ) => {
 			//: @end-ignore
 
 			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`kein( 1, { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return kein( 1, { 0: "hello", 1: "world" } );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
 		} );
 	} );
 

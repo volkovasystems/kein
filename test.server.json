@@ -1,19 +1,19 @@
 {
 	"stats": {
-		"suites": 18,
-		"tests": 17,
-		"passes": 17,
+		"suites": 19,
+		"tests": 18,
+		"passes": 18,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-21T09:37:58.753Z",
-		"end": "2017-09-21T09:37:58.765Z",
-		"duration": 12
+		"start": "2017-09-22T05:58:40.483Z",
+		"end": "2017-09-22T05:58:40.492Z",
+		"duration": 9
 	},
 	"tests": [
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', NaN )` should be equal to true",
-			"duration": 2,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -34,6 +34,13 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 1, { 0: 'hello', 1: 'world' } )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -136,7 +143,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', NaN )` should be equal to true",
-			"duration": 2,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -157,6 +164,13 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "kein `kein( 'toString', ( ) => { } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "kein `kein( 1, { 0: 'hello', 1: 'world' } )` should be equal to true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
